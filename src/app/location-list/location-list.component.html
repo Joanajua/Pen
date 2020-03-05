@@ -1,0 +1,10 @@
+<h2>Locations List</h2>
+<h5>
+  {{selectedLocation.city}}
+    <ol>
+        <li *ngFor="let location of locationList">
+          <a (click)="onClick(location)"><p>{{location.city}}</p></a>
+        </li>
+    </ol>
+
+</h5>

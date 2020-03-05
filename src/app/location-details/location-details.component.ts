@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { PenLocation } from '../pen-location';
-
+import { AfterViewInit, Component, OnInit, Input } from '@angular/core';
+import { Location } from '../location';
+import { LocationListComponent } from "../location-list/location-list.component";
 
 @Component({
   selector: 'app-location-details',
@@ -8,12 +8,16 @@ import { PenLocation } from '../pen-location';
   styleUrls: ['./location-details.component.css']
 })
 export class LocationDetailsComponent implements OnInit {
-  location: PenLocation = {
+  @Input() selectedLocation: Location
+
+  // @ViewChild(LocationListComponent) child
+
+  location: Location = {
     penList: ["Bic",
       "Rotring",
       "Cool"],
     city: "Gloucester",
-    postCode: "GL1 4HK"
+    postCode: "GL1 4HK",
   }
 
   constructor() { }
@@ -22,4 +26,7 @@ export class LocationDetailsComponent implements OnInit {
   }
 
 
+  // ngAfterViewInit() {
+  //   this.selectedLocation = this.child.location
+  // }
 }
