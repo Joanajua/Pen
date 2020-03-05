@@ -1,0 +1,11 @@
+<h2>Details of the pen location</h2>
+<h5>
+    <ol>
+        <li *ngFor="let pens of location.penList; let i = index">
+            <p>Pen: {{location.penList[i]}}</p>
+            <p>City: {{location.city}}</p>
+            <p>Post code: {{location.postCode}}</p>
+        </li>
+    </ol>
+
+</h5>
